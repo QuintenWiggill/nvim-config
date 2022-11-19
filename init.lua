@@ -2,6 +2,7 @@ require('base')
 require('highlights')
 require('maps')
 require('plugins')
+require('rust-opts')
 
 local has = vim.fn.has
 local is_mac = has "macunix"
