@@ -12,6 +12,8 @@ packer.startup(function(use)
   use 'folke/tokyonight.nvim'
   use("nvim-lua/popup.nvim")
   use 'nvim-lua/plenary.nvim' -- Common utilities
+  -- Packer
+  use { 'sindrets/diffview.nvim' }
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   -- Autocompletion framework
   use("hrsh7th/nvim-cmp")
