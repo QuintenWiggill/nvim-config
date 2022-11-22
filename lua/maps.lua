@@ -13,9 +13,6 @@ keymap.set('n', 'dw', 'vb"_d')
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
--- Save with root permission (not working for now)
---vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
-
 -- New tab
 keymap.set('n', 'te', ':tabedit')
 -- Split window
@@ -36,6 +33,9 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 
 -- Leave insert mode 
 keymap.set('i', 'jk', '<Esc>')
+
+-- Nvim Tree
+keymap.set('n', '<leader>cf', ':NvimTreeFindFile')
 
 -- Telescope
 keymap.set('n', '<leader>ff', builtin.find_files, {})
