@@ -36,6 +36,3 @@ keymap.set('i', 'jk', '<Esc>')
 
 -- Nvim Tree
 keymap.set('n', '<leader>cf', ':NvimTreeFindFile')
-
--- Telescope
-keymap.set('n', '<leader>ff', builtin.find_files, {})
