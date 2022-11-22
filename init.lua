@@ -15,5 +15,3 @@ if is_win then
   require('windows')
 end
 
--- empty setup using defaults
-require("nvim-tree").setup()
