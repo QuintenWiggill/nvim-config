@@ -31,8 +31,9 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
--- Leave insert mode 
+-- Leave insert mode
 keymap.set('i', 'jk', '<Esc>')
 
 -- Nvim Tree
 keymap.set('n', '<leader>cf', ':NvimTreeFindFile')
+keymap.set('n', ';cc', ':NvimTreeToggle<Cr>')
