@@ -39,7 +39,7 @@ packer.startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use {
     'nvim-treesitter/nvim-treesitter',
-     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
   use 'nvim-tree/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
@@ -54,7 +54,7 @@ packer.startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
   use 'akinsho/nvim-bufferline.lua'
-  -- use 'github/copilot.vim'
+  use 'github/copilot.vim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
