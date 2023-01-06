@@ -28,6 +28,7 @@ vim.opt.wrap = false -- No Wrap lines
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
+vim.opt.relativenumber = true
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
@@ -42,7 +43,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
 
-vim.cmd[[colorscheme tokyonight-storm]]
+vim.cmd [[colorscheme tokyonight-storm]]
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

@@ -14,7 +14,10 @@ keymap.set('n', 'dw', 'vb"_d')
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- New tab
-keymap.set('n', 'te', ':tabedit')
+keymap.set('n', ';te', ':tabedit<Cr>')
+keymap.set('n', ';tn', ':tabnext<Cr>')
+keymap.set('n', ';tp', ':tabprevious<Cr>')
+keymap.set('n', ';tc', ':tabclose<Cr>')
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
@@ -35,5 +38,5 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 keymap.set('i', 'jk', '<Esc>')
 
 -- Nvim Tree
-keymap.set('n', '<leader>cf', ':NvimTreeFindFile')
+keymap.set('n', '<leader>cf', ':NvimTreeFindFile<Cr>')
 keymap.set('n', ';cc', ':NvimTreeToggle<Cr>')
