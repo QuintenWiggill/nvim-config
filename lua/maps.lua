@@ -40,3 +40,8 @@ keymap.set('i', 'jk', '<Esc>')
 -- Nvim Tree
 keymap.set('n', '<leader>cf', ':NvimTreeFindFile<Cr>')
 keymap.set('n', ';cc', ':NvimTreeToggle<Cr>')
+
+-- Git stuff
+keymap.set('n', ';gs', vim.cmd.Git);
+keymap.set('n', ';gb', ':Git blame<Cr>');
+keymap.set('n', ';gd', ':Git diff<Cr>');

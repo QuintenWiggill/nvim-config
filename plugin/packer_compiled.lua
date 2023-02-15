@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "/home/quinten/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
-  ["git.nvim"] = {
-    loaded = true,
-    path = "/home/quinten/.local/share/nvim/site/pack/packer/start/git.nvim",
-    url = "https://github.com/dinhhuy258/git.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/quinten/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -238,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/quinten/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/quinten/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-vsnip"] = {
     loaded = true,
