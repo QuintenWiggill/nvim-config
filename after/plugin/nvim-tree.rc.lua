@@ -19,6 +19,7 @@ local function open_nvim_tree(data)
   local directory = vim.fn.isdirectory(data.file) == 1
   local api = require("nvim-tree.api")
 
+  vim.cmd [[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]
   if no_name then
     api.tree.open({ focus = false, find_file = true, })
   elseif directory then
