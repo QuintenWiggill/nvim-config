@@ -7,15 +7,28 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'nvim-lualine/lualine.nvim' -- Statusline
-  use 'folke/tokyonight.nvim'
-  use("nvim-lua/popup.nvim")
+  -- Essentials
+  use 'wbthomason/packer.nvim' -- Package manager
   use 'nvim-lua/plenary.nvim' -- Common utilities
-  -- Packer
-  use { 'sindrets/diffview.nvim' }
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  -- Autocompletion framework
+  use("nvim-lua/popup.nvim")
+  use 'nvim-telescope/telescope.nvim' -- Fuzzy finder
+  use 'nvim-telescope/telescope-file-browser.nvim' -- File search and browser
+  use 'nvim-tree/nvim-web-devicons' -- File icons
+  use 'nvim-tree/nvim-tree.lua' -- File and folder browser
+
+  -- Looks
+  use 'nvim-lualine/lualine.nvim' -- Statusline
+  use { 'catppuccin/nvim', as = 'catppuccin' } -- Theme
+  use 'folke/tokyonight.nvim' -- Theme
+  use {
+    'nvim-treesitter/nvim-treesitter', -- Syntax highlighting
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  }
+  use 'norcalli/nvim-colorizer.lua' -- Color highlighter #fff
+  use 'akinsho/nvim-bufferline.lua'
+  use 'lukas-reineke/indent-blankline.nvim'
+
+  -- LSP
   use("hrsh7th/nvim-cmp")
   use({
     -- cmp LSP completion
@@ -29,34 +42,28 @@ packer.startup(function(use)
     requires = { "hrsh7th/nvim-cmp" },
   })
   use('hrsh7th/vim-vsnip')
+  use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use("simrat39/rust-tools.nvim")
   use 'neovim/nvim-lspconfig' -- LSP
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-
   use 'glepnir/lspsaga.nvim' -- LSP UIs
-  use 'L3MON4D3/LuaSnip'
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  }
-  use 'nvim-tree/nvim-web-devicons' -- File icons
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
-  use 'nvim-tree/nvim-tree.lua'
+  use 'folke/trouble.nvim' -- Diagnostics
+
+  -- Git
+  use { 'sindrets/diffview.nvim' } -- Git diff UI
+  use 'tpope/vim-fugitive' -- Git util
+  use 'lewis6991/gitsigns.nvim' -- Visual git stuff
+
+  -- Code editing
+  use 'tpope/vim-surround' -- Surround selections with quotes, brackets etc
+  use 'L3MON4D3/LuaSnip' -- Code snippets
   use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
-  use 'norcalli/nvim-colorizer.lua'
-  use 'folke/zen-mode.nvim'
+  use 'windwp/nvim-ts-autotag' -- Auto tags for html, tsx etc
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-  use 'akinsho/nvim-bufferline.lua'
   use 'github/copilot.vim'
-  use 'lukas-reineke/indent-blankline.nvim'
-  use 'lewis6991/gitsigns.nvim'
-  use 'tpope/vim-fugitive'
-  use { 'catppuccin/nvim', as = 'catppuccin' }
 end)
