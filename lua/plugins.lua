@@ -58,4 +58,5 @@ packer.startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-fugitive'
+  use { 'catppuccin/nvim', as = 'catppuccin' }
 end)
