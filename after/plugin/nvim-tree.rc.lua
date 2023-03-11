@@ -23,6 +23,7 @@ local function open_nvim_tree(data)
   if no_name then
     api.tree.open({ focus = false, find_file = true, })
   elseif directory then
+    vim.cmd.cd(data.file)
     api.tree.open()
   else
     return
