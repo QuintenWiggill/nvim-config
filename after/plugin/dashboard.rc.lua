@@ -1,46 +1,74 @@
-local status, dashboard = pcall(require, "dashboard")
+local status, dashboard = pcall(require, "alpha.themes.dashboard")
+local alpha = require("alpha")
 if (not status) then return end
 
-dashboard.setup({
-  theme = 'hyper',
-  config = {
-    header = {
-      [[  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ]],
-      [[  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║ ]],
-      [[  ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║ ]],
-      [[  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ]],
-      [[  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║ ]],
-      [[  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ]],
-      [[]],
-    },
-    shortcut = {
-      { desc = ' Update', group = '@property', action = 'PackerUpdate', key = 'u' },
-      {
-        icon = ' ',
-        icon_hl = '@variable',
-        desc = 'Files',
-        group = 'Label',
-        action = 'Telescope find_files',
-        key = 'f',
-      },
-      {
-        icon = ' ',
-        icon_hl = '@variable',
-        desc = 'Tree',
-        group = 'Label',
-        action = 'NvimTreeToggle',
-        key = 'c',
-      },
-      {
-        desc = ' config',
-        group = 'Number',
-        action = 'e ~/.config/nvim',
-        key = 'd',
-      },
-    },
-    packages = { enable = false },
-    footer = {}
+local headers = {
+  {
+    [[              *                     *                                                                                      ]],
+    [[                                          *            '                                *                                  ]],
+    [[                                   *                       .       *                                                       ]],
+    [[                                         *                                   |                           *       +         ]],
+    [[       *                                                                 - +-- -                 '                  |    ]],
+    [[                       *   ███████████           █████      ██       !                 ()    .-.,="``"=.    - o -  ]],
+    [[                          ███████████             █████                                       '=/_       \     |    ]],
+    [[                      '   ████████████████ ███████████ ███   ███████   *        *   |  '=._    |         ]],
+    [[          .              ████████████████ ████████████ █████ ██████████████               \     `=./`,        ]],
+    [[          .             █████████████████████████████ █████ █████ ████ █████            .   '=.__.=' `='       ]],
+    [[          :           ██████████████████████████████████ █████ █████ ████ █████  +                         +     ]],
+    [[          !          ██████  ███ █████████████████ ████ █████ █████ ████ ██████    O      *        '       .    ]],
+    [[          |          ██████   ██  ███████████████   ██ █████████████████                                 ]],
+    [[          |_         ██████   ██  ███████████████   ██ █████████████████                                 ]],
+    [[       ,  | `.                                                                                             *               ]],
+    [[ --- --+-<#>-+- ---                                                                *   ' *                                 ]],
+    [[       `._|_,'                             .                                                                               ]],
+    [[          T                                ;                                                                               ]],
+    [[          |                            - --+- -   *                                                                        ]],
+    [[          !                     .          !                                                                               ]],
+    [[          :                  .             .                                  *                                 .          ]],
+    [[                   *            +                                                                                          ]],
+    [[                                  ~+                                                        '                              ]],
+    [[                                                                                           *                               ]],
   },
-})
+  -- {
+  --   "                                                     ",
+  --   "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+  --   "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+  --   "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+  --   "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+  --   "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+  --   "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+  --   "                                                     ",
+  -- },
 
-vim.keymap.set('n', ';dd', '<Cmd>Dashboard<Cr>')
+  -- {
+  --   [[                               __                ]],
+  --   [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+  --   [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+  --   [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+  --   [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+  --   [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+  -- },
+
+}
+
+dashboard.section.header.val = headers[1]
+dashboard.section.header.opts.hl = "Function"
+local buttons = {
+  type = "group",
+  val = {
+    { type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
+    { type = "padding", val = 1 },
+    dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
+    dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
+    dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
+    dashboard.button("g", " " .. " Find text", ":Telescope live_grep <CR>"),
+    dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+  },
+  position = "center",
+}
+dashboard.opts.layout[1].val = 1
+dashboard.opts.layout[4] = buttons
+
+alpha.setup(dashboard.opts)
+
+vim.keymap.set('n', ';dd', '<Cmd>Alpha<Cr>')

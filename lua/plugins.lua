@@ -27,9 +27,8 @@ packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua' -- Color highlighter #fff
   use 'akinsho/nvim-bufferline.lua'
   use 'lukas-reineke/indent-blankline.nvim'
-  use {
-    'glepnir/dashboard-nvim',
-  }
+  use 'goolord/alpha-nvim'
+
   -- LSP
   use("hrsh7th/nvim-cmp")
   use({
