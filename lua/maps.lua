@@ -38,7 +38,7 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 keymap.set('i', 'jk', '<Esc>')
 
 -- Nvim Tree
-keymap.set('n', '<leader>cf', ':NvimTreeFindFile<Cr>')
+keymap.set('n', ';cf', ':NvimTreeFindFile<Cr>')
 keymap.set('n', ';cc', ':NvimTreeToggle<Cr>')
 
 -- Git stuff
