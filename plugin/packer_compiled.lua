@@ -194,6 +194,11 @@ _G.packer_plugins = {
     path = "/home/quinten/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-neoclip.lua"] = {
+    loaded = true,
+    path = "/home/quinten/.local/share/nvim/site/pack/packer/start/nvim-neoclip.lua",
+    url = "https://github.com/AckslD/nvim-neoclip.lua"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/quinten/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -253,6 +258,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/quinten/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
+  },
+  ["vim-dadbod"] = {
+    loaded = true,
+    path = "/home/quinten/.local/share/nvim/site/pack/packer/start/vim-dadbod",
+    url = "https://github.com/tpope/vim-dadbod"
   },
   ["vim-fugitive"] = {
     loaded = true,

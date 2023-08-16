@@ -43,7 +43,7 @@ packer.startup(function(use)
     after = { 'hrsh7th/nvim-cmp' },
     requires = { 'hrsh7th/nvim-cmp' },
   })
-  use('hrsh7th/vim-vsnip')
+  use 'hrsh7th/vim-vsnip'
   use 'onsails/lspkind-nvim'            -- vscode-like pictograms
   use 'simrat39/rust-tools.nvim'
   use 'neovim/nvim-lspconfig'           -- LSP
@@ -67,6 +67,8 @@ packer.startup(function(use)
     'iamcco/markdown-preview.nvim',
     run = function() vim.fn['mkdp#util#install']() end,
   })
-  use 'folke/which-key.nvim' -- Keybindings
+  use 'folke/which-key.nvim'    -- Keybindings
   use 'github/copilot.vim'
+  use 'AckslD/nvim-neoclip.lua' -- Register clipboard manager
+  use 'tpope/vim-dadbod'        -- DB
 end)
