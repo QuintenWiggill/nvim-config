@@ -67,8 +67,9 @@ packer.startup(function(use)
     'iamcco/markdown-preview.nvim',
     run = function() vim.fn['mkdp#util#install']() end,
   })
-  use 'folke/which-key.nvim'    -- Keybindings
+  use 'folke/which-key.nvim'      -- Keybindings
   use 'github/copilot.vim'
-  use 'AckslD/nvim-neoclip.lua' -- Register clipboard manager
-  use 'tpope/vim-dadbod'        -- DB
+  use 'AckslD/nvim-neoclip.lua'   -- Register clipboard manager
+  use 'tpope/vim-dadbod'          -- DB
+  use 'MunifTanjim/prettier.nvim' -- Prettier auto format
 end)
