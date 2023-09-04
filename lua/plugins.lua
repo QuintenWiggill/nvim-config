@@ -68,7 +68,7 @@ packer.startup(function(use)
     run = function() vim.fn['mkdp#util#install']() end,
   })
   use 'folke/which-key.nvim'      -- Keybindings
-  use 'github/copilot.vim'
+  use 'zbirenbaum/copilot.lua'
   use 'AckslD/nvim-neoclip.lua'   -- Register clipboard manager
   use 'tpope/vim-dadbod'          -- DB
   use 'MunifTanjim/prettier.nvim' -- Prettier auto format
