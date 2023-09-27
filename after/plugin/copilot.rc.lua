@@ -1,6 +1,11 @@
 local status, copilot = pcall(require, "copilot")
 if (not status) then return end
 
+local accept_map = "<M-CR>"
+if vim.fn.has("macos") == 1 then
+  accept_map = "<S-CR>"
+end
+
 copilot.setup({
   panel = {
     enabled = true,
@@ -10,7 +15,7 @@ copilot.setup({
       jump_next = "]]",
       accept = "<CR>",
       refresh = "gr",
-      open = "<M-CR>"
+      open = ";cp"
     },
     layout = {
       position = "bottom", -- | top | left | right
@@ -22,7 +27,7 @@ copilot.setup({
     auto_trigger = false,
     debounce = 75,
     keymap = {
-      accept = "<M-l>",
+      accept = accept_map,
       accept_word = false,
       accept_line = false,
       next = "<M-]>",
